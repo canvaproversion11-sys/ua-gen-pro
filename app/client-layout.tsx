@@ -6,12 +6,12 @@ import { memo } from "react"
 import dynamic from "next/dynamic"
 
 const Layout = dynamic(() => import("@/components/Layout"), {
-  loading: () => <div className="min-h-screen bg-slate-50 dark:bg-slate-900" />,
+  loading: () => null,
   ssr: false,
 })
 
 const AuthWrapper = dynamic(() => import("@/components/AuthWrapper"), {
-  loading: () => <div className="min-h-screen bg-slate-50 dark:bg-slate-900" />,
+  loading: () => null,
   ssr: false,
 })
 
