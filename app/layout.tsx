@@ -3,8 +3,12 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
 import ClientLayout from "./client-layout"
+import dynamic from "next/dynamic"
+
+const Toaster = dynamic(() => import("@/components/ui/toaster").then(mod => ({ default: mod.Toaster })), {
+  ssr: false,
+})
 
 const inter = Inter({
   subsets: ["latin"],
