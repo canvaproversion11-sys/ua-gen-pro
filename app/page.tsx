@@ -9,17 +9,14 @@ import { GenerationHistory } from "@/lib/supabase" // Declared the variable here
 import Link from "next/link"
 
 const CustomModal = dynamic(() => import("@/components/CustomModal"), {
-  loading: () => null,
   ssr: false,
 })
 
 const ProgressModal = dynamic(() => import("@/components/ProgressModal"), {
-  loading: () => null,
   ssr: false,
 })
 
 const GeneratorControls = dynamic(() => import("@/components/GeneratorControls"), {
-  loading: () => null,
   ssr: false,
 })
 
