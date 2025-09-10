@@ -7,10 +7,12 @@ import dynamic from "next/dynamic"
 
 const Layout = dynamic(() => import("@/components/Layout"), {
   loading: () => <div className="min-h-screen bg-slate-50 dark:bg-slate-900" />,
+  ssr: false,
 })
 
 const AuthWrapper = dynamic(() => import("@/components/AuthWrapper"), {
   loading: () => <div className="min-h-screen bg-slate-50 dark:bg-slate-900" />,
+  ssr: false,
 })
 
 const ClientLayout = memo(({ children }: { children: React.ReactNode }) => {
