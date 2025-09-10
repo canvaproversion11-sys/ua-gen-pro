@@ -3394,6 +3394,80 @@ video {
   will-change: backdrop-filter;
   contain: layout style;
 }
+
+/* Toast animations and styles */
+@keyframes progress-shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes liquid-wave {
+  0%, 100% { 
+    transform: translateX(-100%) skewX(0deg); 
+  }
+  50% { 
+    transform: translateX(100%) skewX(-15deg); 
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+.animate-liquid-wave {
+  animation: liquid-wave 2s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 1.5s ease-out forwards;
+}
+
+/* Enhanced toast stacking */
+.toast-stack-1 {
+  transform: translateY(4px) scale(0.98);
+  opacity: 0.9;
+}
+
+.toast-stack-2 {
+  transform: translateY(8px) scale(0.96);
+  opacity: 0.7;
+}
+
+.toast-stack-3 {
+  transform: translateY(12px) scale(0.94);
+  opacity: 0.5;
+}
+
+/* Smooth toast entry with liquid effect */
+.toast-enter {
+  animation: 
+    slide-in-from-right-full 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+/* Liquid glass reflection effect */
+.glass-reflection {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
 .file\:border-0::file-selector-button {
   border-width: 0px;
 }
@@ -4724,10 +4798,6 @@ video {
 }
 .dark\:bg-slate-800\/90:is(.dark *) {
   background-color: rgb(30 41 59 / 0.9);
-}
-.dark\:bg-slate-900:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
 }
 .dark\:bg-slate-900\/20:is(.dark *) {
   background-color: rgb(15 23 42 / 0.2);
