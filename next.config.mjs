@@ -89,7 +89,7 @@ const nextConfig = {
     
     config.optimization = {
       ...config.optimization,
-      usedExports: true,
+      usedExports: false,
       sideEffects: false,
       moduleIds: 'deterministic',
       splitChunks: {
@@ -131,7 +131,6 @@ const nextConfig = {
 
     if (!dev) {
       config.optimization.providedExports = true
-      config.optimization.usedExports = true
       config.optimization.sideEffects = false
     }
     
