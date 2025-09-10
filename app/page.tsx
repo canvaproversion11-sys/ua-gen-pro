@@ -9,17 +9,17 @@ import { GenerationHistory } from "@/lib/supabase" // Declared the variable here
 import Link from "next/link"
 
 const CustomModal = dynamic(() => import("@/components/CustomModal"), {
-  loading: () => <div className="fixed inset-0 bg-black/20 backdrop-blur-sm" />,
+  loading: () => null,
   ssr: false,
 })
 
 const ProgressModal = dynamic(() => import("@/components/ProgressModal"), {
-  loading: () => <div className="fixed inset-0 bg-black/20 backdrop-blur-sm" />,
+  loading: () => null,
   ssr: false,
 })
 
 const GeneratorControls = dynamic(() => import("@/components/GeneratorControls"), {
-  loading: () => <LoadingSkeleton />,
+  loading: () => null,
   ssr: false,
 })
 
